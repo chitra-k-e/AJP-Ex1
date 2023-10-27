@@ -1,0 +1,92 @@
+<html xmlns:th="http:www.thymeLeaf.org">
+    <head>
+        <title>Registration</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <style>
+            form
+            {
+                margin-top: 20px;
+                margin-left: 450px;
+                font-family: serif;
+                color: black;
+            }
+            body
+            {
+                background-image: url(images.jpg);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%;
+            }
+            .he
+            {
+                margin-top: 20px;
+                font-size: 50;
+                font-family: serif;
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <center><label class="he">Register Here</label></center>
+        <form th:action="@{registersuccess}" method="post" th:object="${frm}">
+           <div class="form-group row"> 
+                Name: &nbsp; &nbsp;
+                <div class="col-sm-5">
+                    <input class="form-control" type="text" th:field="*{name}">
+                </div> 
+            </div> <br>
+            <div class="form-group row"> 
+                Email : &nbsp; &nbsp;
+                <div class="col-sm-5">
+                <input class="form-control"  type="text" th:field="*{email}"><br>
+                </div> 
+            </div> 
+            <div class="form-group row">   
+                Password: 
+                <div class="col-sm-5">
+                <input class="form-control"  type="password" th:field="*{password}">
+                </div>
+            </div> <br>
+            <div class="form-group row">
+            Date of Birth: <div class="col-sm-3"> <input class="form-control" type="date" th:field="*{DOB}"></div>
+            </div><br>
+         
+            <div class="form-group">
+             Gender: &nbsp;
+                <input "form-control" type="radio" id="Male" th:field="*{g1}" value="Male"> 
+                <label for="Male">Male</label> &nbsp;&nbsp;
+                <input "form-control" type="radio" id="Female"  th:field="*{g1}" value="Female">
+                <label for="Female">Female</label> 
+            </div><br>
+            <div class="form-group">
+                <label>Types of Paintings: </label> &nbsp;
+                <input  type="checkbox" id="oil" th:field="*{t1}" value="Oil Paintings">
+                <label for="oil"> Oil Paintings</label> &nbsp;
+                <input type="checkbox" id="spray" th:field="*{t1}" value="spray paintings">
+                <label for="spray">spray paintings</label> &nbsp;
+                <input type="checkbox" id="warli" th:field="*{t1}" value="warli paintings">
+                <label for="warli">warli paintings</label><br>
+            </div> <br>
+            <div class="form-group">
+              <label for="fb">Feedback:</label> <br>
+              <div class="col-sm-7">
+              <textarea class="form-control" id="fb" th:field="*{feedback}" cols="30" rows="2"></textarea></div><br>
+            </div>
+            <div class="form-group">
+                <label>Location: </label> <br>
+                <div class="col-sm-5">
+                <input class="form-control"  list="loc" th:field="*{location}">
+                    <datalist id="loc">
+                    <option value="Komarapalayam" >
+                    <option value="erode" />
+                    <option value="perundurai" />
+                    <option value="salem" />
+                    <option value="chennai" />
+                    </datalist> 
+                </div>
+            </div><br>
+           <center><button type="submit" class="btn btn-success"> Register</button></center>
+        </form>
+    </body>
+</html>

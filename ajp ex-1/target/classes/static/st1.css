@@ -1,0 +1,45 @@
+*
+                {
+                    margin:0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+                .video
+                {
+                    position: absolute;
+                    bottom: 0;
+                    right:0;
+                    left:0;
+                    width: 100%;
+                    z-index: -1;
+                }
+                img
+                {
+                    mix-blend-mode: multiply;
+                    width: 200px;
+                }
+                .content
+                {
+                    position: absolute;
+                    width: 100%;
+                    top:55%;
+                    transform: translateY(-50%);
+                    text-align: center;
+                }
+                .content h1
+                {
+                    font-size: 70px;
+                    color:black;
+                }
+                button
+                {
+                    width: 150px ;
+                    padding: 15px;
+                    margin: 20px 5px;
+                    border: 2px;
+                    border-radius: 30px;
+                    font-size: 20px;
+                    cursor: pointer;
+                    text-align: center;
+                    background-color: crimson;
+                }
